@@ -1,0 +1,95 @@
+//// HANGMAN PROJECT
+
+1.FIRST DRAW HANGMAN WITH SVG SCALABLE VECTOR GRAPHICS
+2.SVG ELEMENT WE CAN STYLE IS KINDA LIKE A CANVAS
+HEIGHT=250 WIDTH=200 INSIDE WE CAN PUT LINES LIKE CIRCLES, AND LINES
+<line x1="" ---- start line
+y1="" vertical start line
+x2="" horizontal line 
+y2="" vertical line
+(to draw hanger)
+(we draw rod, head )
+
+// head
+cx="" defines position of circle 
+cy=""
+r="" is size of circle 
+
+//body, arms, legs
+x1 y1 x2 y2
+
+and then add classes so we can style them in JS expect for HANGER no need
+
+
+3.THEN STYLE IN CSS
+
+4.MAIN STYLING WRONG LETTERS CONTAINER THAT WILL BE ADDED LATER IN JS DYNAMICLLY
+
+5.THEN WE STYLE POPUP AND STYLING WITH TRANSFORM TRANSLATE IN CSS DISPLAY NONE,
+CREATE CLASSES THAT WILL WE LATER ADD IN JS
+
+6.ADD ALL EVENTS IN JS CLASSES 
+7.CREATE ARRAY OF WORDS OR YOU CAN FETCH SOMETHING BUT WE ARE GOING TO HARDCORE WORDS IN HERE
+8.SELECT WORD WE CAN GET RANDOM WORD WITH MATH.FLOOR MATH.RANDOM () * WORDS.LENGTH
+
+9.WE NEED TO ARRAYS ONE WILL STORE CORRECT AND OTHER WRONG LETTERS
+
+10.FIRST FUNCTION BE TO DISPLAY WORD
+wordEl.innerHTML = `` AND THEN split() selected word and map <span> ${correctLetter.includes(letter)}
+
+ternary ? operator is like short if statement and if its included : is used for else '' ). join('');
+
+11.CREATE VARIABLE THAT REPLACES NEW LINE CHARACTER
+(example const innerWord = wordEl.innerText.replace(/\n/ g, '')
+
+
+12.CHECK IF INNER WORD IS EQUAL TO SELCTED WORD AND POPUP STYLE DISPLAY TO FLEX
+
+13.ADD GAME FUNCIONALITY IT SHOULD FIRE EVENT WHEN WE HIT KEYBOARD
+(keydown key press example:
+window.addEventListener('keydown', e => {
+ we add keyCode so it only guess letters 
+if(e.keyCode >= 65 && e.keyCode <= 90) {
+const letter = e.key;
+
+//find if letter is in selected word 
+ if(selectedWord.includes(letter) {
+       if(!correctLetters.includes(letter)) {
+    correctLetters.push(letter);
+
+  displayWord();
+} else {
+  showNotification();
+}
+} else {
+   if(!wrongLetter.includes(letter)) {
+   wrongLetters.push(letter);
+
+updateWrongLetters();
+} else {
+ showNotification()
+}
+14.CREATE UPDATEWRONG LETTERS FUNCTION
+15.SHOW NOTIFICATION FUNCTION  CREATE ALSO
+(notification.classList.add('show');
+setTimeout(() => {
+notifacation.classList.remove('show')
+},2000)
+
+16.UPDATEWRONGLETTERS FUNCTION 
+CHECK IF THERE IS ANYTHING INSIDE THERE AND THEN TEMPLATE LITERATE WITH PARAGRAPH WRONG 
+THEN WE MAP TRUE AND INSIDE MAP FUNCTION SPAN WE INSERT TEMPLATE LITERATE LETTER
+
+17.FIGURE PARTS WE WILL LOOP TRUE WITH FOREACH
+CHECK IF INDEX EACH PART AND MANIPULATE DISPLAY PART ELSE 
+PART.STYLE BLOCK OR NONE TO DISPLAY PARTS
+
+18.CHECK IF LOST 
+if (wrongLetter.length === figureParts.length) and then innerText set to you lost
+popup.style.display = flex;
+
+19.ADD ANOTHER EVENTLISTENER OF CLICK FOR PLAY AGAIN BUTTON
+
+// EMPTY ARRAYS 
+correct and wrong letters splice
+
